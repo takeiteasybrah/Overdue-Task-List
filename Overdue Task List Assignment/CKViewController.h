@@ -10,4 +10,7 @@
 
 @interface CKViewController : UIViewController
 
+- (IBAction)reorderBarButtonItemPressed:(UIBarButtonItem *)sender;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

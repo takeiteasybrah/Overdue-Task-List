@@ -21,6 +21,9 @@
 		F1DB0F10191475D500B7EC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DB0EF2191475D500B7EC9B /* UIKit.framework */; };
 		F1DB0F18191475D500B7EC9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1DB0F16191475D500B7EC9B /* InfoPlist.strings */; };
 		F1DB0F1A191475D500B7EC9B /* Overdue_Task_List_AssignmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DB0F19191475D500B7EC9B /* Overdue_Task_List_AssignmentTests.m */; };
+		F1DB0F251914761900B7EC9B /* CKAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DB0F241914761900B7EC9B /* CKAddTaskViewController.m */; };
+		F1DB0F281914762A00B7EC9B /* CKDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DB0F271914762A00B7EC9B /* CKDetailTaskViewController.m */; };
+		F1DB0F2B1914763700B7EC9B /* CKEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DB0F2A1914763700B7EC9B /* CKEditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		F1DB0F15191475D500B7EC9B /* Overdue Task List AssignmentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue Task List AssignmentTests-Info.plist"; sourceTree = "<group>"; };
 		F1DB0F17191475D500B7EC9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1DB0F19191475D500B7EC9B /* Overdue_Task_List_AssignmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_Task_List_AssignmentTests.m; sourceTree = "<group>"; };
+		F1DB0F231914761900B7EC9B /* CKAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAddTaskViewController.h; sourceTree = "<group>"; };
+		F1DB0F241914761900B7EC9B /* CKAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAddTaskViewController.m; sourceTree = "<group>"; };
+		F1DB0F261914762A00B7EC9B /* CKDetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKDetailTaskViewController.h; sourceTree = "<group>"; };
+		F1DB0F271914762A00B7EC9B /* CKDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKDetailTaskViewController.m; sourceTree = "<group>"; };
+		F1DB0F291914763700B7EC9B /* CKEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEditTaskViewController.h; sourceTree = "<group>"; };
+		F1DB0F2A1914763700B7EC9B /* CKEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKEditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +126,12 @@
 				F1DB0F00191475D500B7EC9B /* Main.storyboard */,
 				F1DB0F03191475D500B7EC9B /* CKViewController.h */,
 				F1DB0F04191475D500B7EC9B /* CKViewController.m */,
+				F1DB0F231914761900B7EC9B /* CKAddTaskViewController.h */,
+				F1DB0F241914761900B7EC9B /* CKAddTaskViewController.m */,
+				F1DB0F261914762A00B7EC9B /* CKDetailTaskViewController.h */,
+				F1DB0F271914762A00B7EC9B /* CKDetailTaskViewController.m */,
+				F1DB0F291914763700B7EC9B /* CKEditTaskViewController.h */,
+				F1DB0F2A1914763700B7EC9B /* CKEditTaskViewController.m */,
 				F1DB0F06191475D500B7EC9B /* Images.xcassets */,
 				F1DB0EF5191475D500B7EC9B /* Supporting Files */,
 			);
@@ -251,8 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DB0EFF191475D500B7EC9B /* CKAppDelegate.m in Sources */,
+				F1DB0F281914762A00B7EC9B /* CKDetailTaskViewController.m in Sources */,
+				F1DB0F251914761900B7EC9B /* CKAddTaskViewController.m in Sources */,
 				F1DB0EFB191475D500B7EC9B /* main.m in Sources */,
 				F1DB0F05191475D500B7EC9B /* CKViewController.m in Sources */,
+				F1DB0F2B1914763700B7EC9B /* CKEditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
