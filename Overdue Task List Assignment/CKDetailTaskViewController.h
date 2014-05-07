@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CKTaskObject.h"
+#import "CKEditTaskViewController.h"
 
-@interface CKDetailTaskViewController : UIViewController
+@interface CKDetailTaskViewController : UIViewController <CKEditTaskViewControllerDelegate>
 
 - (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender;
 
-@property (strong, nonatomic) IBOutlet UILabel *taskLabel;
-@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
-@property (strong, nonatomic) IBOutlet UILabel *taskDetails;
+@property (strong, nonatomic) IBOutlet UILabel *taskTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *taskDetailsLabel;
 
+
+@property (strong, nonatomic) CKTaskObject *taskObject;
+@property (strong, nonatomic) NSIndexPath *path;
 
 @end

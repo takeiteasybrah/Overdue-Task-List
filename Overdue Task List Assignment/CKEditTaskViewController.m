@@ -27,6 +27,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.taskNameTextField.text = self.taskObject.title;
+    self.taskDetailsTextView.text = self.taskObject.detail;
+    self.taskDatePicker.date = self.taskObject.date;
+    
+    self.taskNameTextField.delegate = self;
+    self.taskDetailsTextView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,5 +53,40 @@
 */
 
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
+    
+    self.taskObject.title = self.taskNameTextField.text;
+    self.taskObject.detail = self.taskDetailsTextView.text;
+    self.taskObject.date = self.taskDatePicker.date;
+    
+    [self.delegate updateTaskObject:self.taskObject];
 }
+
+#pragma mark - UITextViewDelgate method
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [self.taskDetailsTextView resignFirstResponder];
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+#pragma mark - UITextFieldDelgate method
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//Remove keyboard if users touches background.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self.taskDetailsTextView resignFirstResponder];
+    [self.taskNameTextField resignFirstResponder];
+    
+    [super touchesBegan:touches withEvent:event];
+}
+
 @end

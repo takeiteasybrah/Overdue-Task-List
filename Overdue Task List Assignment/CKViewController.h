@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CKAddTaskViewController.h"
 
-@interface CKViewController : UIViewController
+@interface CKViewController : UIViewController <CKAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)reorderBarButtonItemPressed:(UIBarButtonItem *)sender;
+- (IBAction)addTaskBarButtonItemPressed:(UIBarButtonItem *)sender;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *reorderBarButtonItem;
+
+//tableView model.
+@property (strong, nonatomic) NSMutableArray *taskObjects;
+
 @end

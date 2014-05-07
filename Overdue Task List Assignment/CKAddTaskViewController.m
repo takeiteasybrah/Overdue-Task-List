@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.taskDetailsTextView.delegate = self;
+    self.taskNameTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,9 +48,54 @@
 }
 */
 
+#pragma mark - IBActions
 - (IBAction)addTaskButtonPressed:(UIButton *)sender {
+    CKTaskObject *newTaskObject = [self createTaskObject];
+    [self.delegate didAddTask:newTaskObject];
 }
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
+    [self.delegate didCancel];
 }
+
+#pragma mark - Helper Methods
+-(CKTaskObject *)createTaskObject
+{
+    CKTaskObject *newTaskObject = [[CKTaskObject alloc] init];
+    newTaskObject.title = self.taskNameTextField.text;
+    newTaskObject.detail = self.taskDetailsTextView.text;
+    newTaskObject.date  = self.taskDatePicker.date;
+    newTaskObject.completion = NO;
+    
+    return newTaskObject;
+}
+
+#pragma mark - UITextViewDelgate method
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [self.taskDetailsTextView resignFirstResponder];
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+#pragma mark - UITextFieldDelgate method
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//Remove keyboard if users touches background.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self.taskDetailsTextView resignFirstResponder];
+    [self.taskNameTextField resignFirstResponder];
+    
+    [super touchesBegan:touches withEvent:event];
+}
+
 @end
